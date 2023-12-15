@@ -7,5 +7,7 @@ logging:
 
 
 datasource:
+  username: ${DATABASE_USERNAME}
+  password: ${DATABASE_PASSWORD}
   driver-class-name: org.mariadb.jdbc.Driver
   url: jdbc:mariadb://project2.cehckoacemxp.ap-northeast-2.rds.amazonaws.com:3306/Project2?useUnicode=true&characterEncoding=UTF-8
