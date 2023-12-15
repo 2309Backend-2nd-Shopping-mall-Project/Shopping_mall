@@ -1,0 +1,13 @@
+
+server:
+  port: 8080
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+datasource:
+  username: root
+  password: 23092309
+  driver-class-name: org.mariadb.jdbc.Driver
+  url: jdbc:mariadb://project2.cehckoacemxp.ap-northeast-2.rds.amazonaws.com:3306/Project2?useUnicode=true&characterEncoding=UTF-8
