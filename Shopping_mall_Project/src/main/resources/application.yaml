@@ -15,7 +15,7 @@ datasource:
 
 
 springdoc:
-  packages-to-scan: com.github.shopping_mall.shopping_mall_project
+  packages-to-scan: com.github.shopping_mall.shopping_mall_project.web.controller
   default-consumes-media-type: application/json;charset=UTF-8
   default-produces-media-type: application/json;charset=UTF-8
   swagger-ui:
