@@ -1,6 +1,6 @@
 package com.github.shopping_mall.shopping_mall_project.repository.Order;
 
-import com.github.shopping_mall.shopping_mall_project.repository.Item.ItemEntity;
+import com.github.shopping_mall.shopping_mall_project.repository.Item.Item;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,8 +13,7 @@ import java.sql.Timestamp;
 @Setter
 @ToString
 @Table(name = "ORDER_DETAIL")
-@EqualsAndHashCode(of = "orderDetailId")
-public class OrderDetailEntity {
+public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_detail_id")
@@ -42,8 +41,8 @@ public class OrderDetailEntity {
     @Column(name = "create_date")
     private Timestamp createDate; // 생성일
 
-    public static OrderDetailEntity createOrderItem(ItemEntity item, int itemCnt){
-        OrderDetailEntity orderItem = new OrderDetailEntity();
+    public static OrderDetail createOrderItem(Item item, int itemCnt){
+        OrderDetail orderItem = new OrderDetail();
         orderItem.setItemId(item.getItemId());
         orderItem.setItemCnt(itemCnt);
         orderItem.setItemPrice(item.getUnitPrice());

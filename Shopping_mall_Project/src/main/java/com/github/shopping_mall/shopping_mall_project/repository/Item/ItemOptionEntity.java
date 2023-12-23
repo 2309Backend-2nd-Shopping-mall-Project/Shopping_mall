@@ -3,22 +3,28 @@ package com.github.shopping_mall.shopping_mall_project.repository.Item;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @ToString
 @Table(name = "ITEM_OPTION")
-@EqualsAndHashCode(of = "itemId")
-public class ItemOptionEntity {
+@IdClass(ItemOption.class)
+public class ItemOptionEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "option_id")
-    private int optionId;
+    private Integer optionId;
 
-    private int itemId;
+    @Id
+    @Column(name = "item_id")
+    private Integer itemId;
 
+    @Column(name = "option_content")
     private String optionContent;
 
-    private String additionalPrice;
+    @Column(name = "additional_price")
+    private Integer additionalPrice;
 }

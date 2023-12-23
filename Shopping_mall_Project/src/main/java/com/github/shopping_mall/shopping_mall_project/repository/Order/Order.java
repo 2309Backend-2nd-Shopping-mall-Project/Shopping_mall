@@ -9,15 +9,14 @@ import lombok.*;
 @Entity
 @ToString
 @Table(name = "ORDER")
-@EqualsAndHashCode(of = "orderId")
-public class OrderEntity {
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
-    private int orderId; // 주문번호
+    private Integer orderId; // 주문번호
 
-    @Column(name = "email")
-    private String email; // 유저 이메일
+    @Column(name = "user_id")
+    private Integer userId; // 유저 아이디
 
     @Column(name = "zipcode")
     private String zipCode; // 주문우편번호
