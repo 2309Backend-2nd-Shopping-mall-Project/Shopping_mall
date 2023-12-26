@@ -29,6 +29,8 @@ dependencies {
     //mariaDB
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:3.0.7'
 
+    implementation 'mysql:mysql-connector-java:8.0.23'
+
     //jpa
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
@@ -47,9 +49,10 @@ dependencies {
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
     //jwt
-
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
     //Cache
     //security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     //swagger
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
 

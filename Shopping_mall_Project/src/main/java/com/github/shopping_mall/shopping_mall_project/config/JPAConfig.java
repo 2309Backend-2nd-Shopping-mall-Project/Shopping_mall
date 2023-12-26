@@ -18,7 +18,9 @@ import java.util.Map;
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = {"com.github.shopping_mall.shopping_mall_project.repository.Test"},
+        basePackages = {"com.github.shopping_mall.shopping_mall_project.repository.Test",
+                        "com.github.shopping_mall.shopping_mall_project.repository.users",
+                        "com.github.shopping_mall.shopping_mall_project.repository.user_roles"},
         entityManagerFactoryRef = "entityManagerFactoryBean1",
         transactionManagerRef = "tmJpa1"
 )
@@ -29,7 +31,9 @@ public class JPAConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean1(@Qualifier("dataSource1")DataSource dataSource){
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.github.shopping_mall.shopping_mall_project.repository.Test");
+        em.setPackagesToScan("com.github.shopping_mall.shopping_mall_project.repository.Test",
+                             "com.github.shopping_mall.shopping_mall_project.repository.users",
+                             "com.github.shopping_mall.shopping_mall_project.repository.user_roles");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
