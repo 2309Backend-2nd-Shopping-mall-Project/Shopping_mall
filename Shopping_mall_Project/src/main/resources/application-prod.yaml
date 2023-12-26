@@ -9,5 +9,11 @@ logging:
 datasource:
   username: ${DATABASE_USERNAME}
   password: ${DATABASE_PASSWORD}
-  driver-class-name: org.mariadb.jdbc.Driver
-  url: jdbc:mariadb://project2.cehckoacemxp.ap-northeast-2.rds.amazonaws.com:3306/Project2?useUnicode=true&characterEncoding=UTF-8
+#  driver-class-name: org.mariadb.jdbc.Driver
+#  url: jdbc:mariadb://project2.cehckoacemxp.ap-northeast-2.rds.amazonaws.com:3306/Project2?useUnicode=true&characterEncoding=UTF-8
+  url: jdbc:mysql://mini.jh1105.xyz:5306/project2?useUnicode=true&characterEncoding=UTF-8
+  driver-class-name: com.mysql.cj.jdbc.Driver
+#  username: BE1
+#  password: qwer1234
+jwtpassword:
+  source: ${TOKEN_CODE}
